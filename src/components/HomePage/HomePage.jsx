@@ -2,6 +2,7 @@ import AnimatedBackground from "../AnimatedBackground/AnimatedBackground";
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import About from "../About/About";
+import Experience from "../Experience/Experience";
 import Projects from "../Projects/Projects";
 import Skills from "../Skills/Skills";
 import Academic from "../Academic/Academic";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <main className="home-page__main">
         <Hero />
         <About />
+        <Experience />
         <Projects />
         <Skills />
         <Academic />

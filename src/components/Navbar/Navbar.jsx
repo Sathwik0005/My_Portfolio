@@ -18,6 +18,7 @@ export default function Navbar() {
 
         <nav className="navbar__links">
           <a href="#about">About</a>
+          <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#academic">Academic</a>
