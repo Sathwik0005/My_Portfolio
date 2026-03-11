@@ -1,0 +1,149 @@
+.animated-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Base — matches your existing dark navy ── */
+.animated-bg__base {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #060d1f 0%, #0c1530 50%, #07101e 100%);
+}
+
+/* ── Subtle ambient glows — just like your landing page ── */
+.animated-bg__glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(110px);
+}
+.animated-bg__glow--left {
+  width: 550px; height: 550px;
+  top: -120px; left: -200px;
+  background: rgba(40, 90, 200, 0.16);
+}
+.animated-bg__glow--right {
+  width: 480px; height: 480px;
+  top: 80px; right: -180px;
+  background: rgba(90, 40, 180, 0.13);
+}
+.animated-bg__glow--bottom {
+  width: 650px; height: 320px;
+  bottom: -130px; left: 22%;
+  background: rgba(40, 120, 180, 0.10);
+}
+
+/* ── Very faint dot grid ── */
+.animated-bg__grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.55) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+/* ── Containers ── */
+.animated-bg__shapes,
+.animated-bg__particles {
+  position: absolute;
+  inset: 0;
+}
+
+/* ── Shape base ── */
+.animated-bg__shape {
+  position: absolute;
+  display: block;
+  will-change: transform, opacity;
+  animation-name: bgShapeFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* ── Triangle — same steel-blue as your landing page triangles ── */
+.animated-bg__shape--triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: linear-gradient(
+    160deg,
+    rgba(80, 130, 200, 0.45) 0%,
+    rgba(50, 90, 160, 0.18) 100%
+  ) !important;
+  filter: drop-shadow(0 0 4px rgba(60, 110, 200, 0.28));
+}
+
+/* ── Diamond/rectangle — outline only, barely glowing ── */
+.animated-bg__shape--rectangle {
+  background: transparent;
+  border: 1px solid rgba(80, 140, 210, 0.35);
+  box-shadow:
+    0 0 6px rgba(60, 120, 200, 0.15),
+    inset 0 0 6px rgba(60, 120, 200, 0.06);
+}
+
+/* ── Diagonal bar — thin, soft ── */
+.animated-bg__shape--diagonal {
+  width: 3px !important;
+  border-radius: 4px;
+  background: linear-gradient(
+    180deg,
+    rgba(100, 160, 220, 0.55) 0%,
+    rgba(60, 110, 180, 0.08) 100%
+  );
+  box-shadow: 0 0 6px rgba(80, 140, 210, 0.22);
+}
+
+/* ── Small filled circle ── */
+.animated-bg__shape--circle {
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 38% 38%,
+    rgba(100, 160, 220, 0.40),
+    rgba(50, 90, 160, 0.12)
+  );
+  box-shadow: 0 0 8px rgba(80, 140, 200, 0.22);
+}
+
+/* ── Hollow ring — like the big ring on your landing page ── */
+.animated-bg__shape--ring {
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(80, 140, 210, 0.30);
+  box-shadow:
+    0 0 10px rgba(60, 120, 200, 0.14),
+    inset 0 0 10px rgba(60, 120, 200, 0.05);
+}
+
+/* ── Glowing dot particles — tiny bright stars ── */
+.animated-bg__particle {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: rgba(170, 205, 240, 0.75);
+  box-shadow:
+    0 0 5px 2px rgba(110, 170, 230, 0.45),
+    0 0 14px 4px rgba(70, 130, 210, 0.18);
+  will-change: transform, opacity;
+  animation-name: bgParticleFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* ────────────────────────────────
+   KEYFRAMES — gentle, slow drift
+──────────────────────────────── */
+
+@keyframes bgShapeFloat {
+  0%   { transform: translateY(0px)   translateX(0px);  opacity: 0.22; }
+  40%  { transform: translateY(-16px) translateX(7px);  opacity: 0.55; }
+  70%  { transform: translateY(-26px) translateX(-5px); opacity: 0.62; }
+  100% { transform: translateY(-10px) translateX(3px);  opacity: 0.38; }
+}
+
+@keyframes bgParticleFloat {
+  0%   { transform: translateY(0px)   scale(1.0); opacity: 0.25; }
+  60%  { transform: translateY(-22px) scale(1.15); opacity: 0.80; }
+  100% { transform: translateY(-8px)  scale(0.95); opacity: 0.42; }
+}

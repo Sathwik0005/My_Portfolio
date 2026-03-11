@@ -1,0 +1,163 @@
+.portal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+}
+
+.portal__background,
+.portal__radial,
+.portal__grid {
+  position: absolute;
+  inset: 0;
+}
+
+.portal__grid {
+  opacity: 0.4;
+  background-size: 80px 80px;
+}
+
+.portal__particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.portal__particle {
+  position: absolute;
+  border-radius: 999px;
+}
+
+.portal__glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 999px;
+  filter: blur(48px);
+  transform: translate(-50%, -50%);
+}
+
+.portal__content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.portal__text-block {
+  text-align: center;
+}
+
+.portal__circle-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+}
+
+.portal__circle {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+.portal__rotating-ring,
+.portal__wave-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.portal__inner-ring {
+  position: absolute;
+  inset: 2rem;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+}
+
+.portal__core {
+  position: absolute;
+  inset: 5rem;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal__symbol {
+  font-size: 4rem;
+}
+
+.portal__title {
+  margin-bottom: 1.5rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.portal__subtitle {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.portal__description {
+  margin-top: 2rem;
+  font-size: 1.125rem;
+}
+
+.portal__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.portal__hint-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.portal__hint-arrow {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .portal__circle {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .portal__inner-ring {
+    inset: 1.5rem;
+  }
+
+  .portal__core {
+    inset: 3.5rem;
+  }
+
+  .portal__title {
+    font-size: 2rem;
+  }
+
+  .portal__subtitle {
+    font-size: 1.25rem;
+  }
+
+  .portal__description {
+    font-size: 1rem;
+  }
+}

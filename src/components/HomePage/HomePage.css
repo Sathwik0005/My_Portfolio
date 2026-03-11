@@ -1,0 +1,12 @@
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  color: #f8fafc;
+  background: transparent;
+  overflow: hidden;
+}
+
+.home-page__main {
+  position: relative;
+  z-index: 1;
+}
